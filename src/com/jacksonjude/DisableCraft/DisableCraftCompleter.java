@@ -22,7 +22,13 @@ public class DisableCraftCompleter implements TabCompleter {
 		switch (args.length)
 		{
 		case 1:
-			return Arrays.asList("add", "remove", "reload");
+			List<String> subcommands = new ArrayList<String>(Arrays.asList("add", "remove", "reload"));
+			
+			for (int i=subcommands.size()-1; i >= 0; i--)
+				if (args.length > 0 && args[0] != "" && !subcommands.get(i).startsWith(args[0]) && !subcommands.get(i).contains(args[0]))
+					subcommands.remove(i);
+			
+			return subcommands;
 		case 2:
 			switch (args[0])
 			{
