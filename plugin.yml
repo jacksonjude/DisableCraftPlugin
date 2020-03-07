@@ -1,0 +1,19 @@
+main: com.jacksonjude.DisableCraft.DisableCraftPlugin
+name: DisableCraft
+version: 1.0
+author: JJCooley
+description: Disables crafting for items. Can be bypassed with permission
+commands:
+   disablecraft:
+      description: Edit or Reload DisableCraft config
+      usage: /disablecraft < add | remove | reload >
+      aliases: [dc]
+      permission: disablecraft.admin
+      permission-message: You cannot edit DisableCraft config
+permissions:
+   disablecraft.admin:
+      description: Edit and Reload DisableCraft config
+      default: op
+   disablecraft.bypass:
+      description: Bypass DisableCraft
+      default: op
